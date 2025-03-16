@@ -1,0 +1,42 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 1px;
+    font-family: calibri, Arial, Helvetica, sans-serif;
+}
+
+
+@mixin flexCenterElementAlignment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin buttonMarginSpacing($marginX, $marginY) {
+    margin: $marginY $marginX;
+}
+
+@mixin buttonPaddingSpacing($marginX, $marginY) {
+    padding: $marginY $marginX;
+}
+
+main {
+    margin: 0px auto;
+
+    h1 {
+        text-align: center;
+    }
+
+    .dynamic-ops {
+        @include flexCenterElementAlignment();
+
+        .button-container {
+            button {
+                @include buttonMarginSpacing(10px, 10px);
+                @include buttonPaddingSpacing(5px, 10px);
+            }
+        }
+    }
+}
